@@ -52,10 +52,10 @@ contract Raffle is VRFConsumerBaseV2, KeeperCompatibleInterface {
      */
     constructor(
         address vrfCoordinatorV2,
-        uint256 entranceFree,
-        bytes32 gasLine,
+        bytes32 gasLine, // The limit for how much gas to use for the callback request to your contract's fulfillRandomWords function
+        uint256 entranceFree, //The gas lane key hash value, which is the maximum gas price you are willing to pay for a request in wei
         uint64 subscriptionId,
-        uint32 callbackGasLimit,
+        uint32 callbackGasLimit, // Specifies the maximum amount of gas you are willing to spend on the callback request
         uint256 interval
     ) VRFConsumerBaseV2(vrfCoordinatorV2) {
         i_entranceFee = entranceFree;
