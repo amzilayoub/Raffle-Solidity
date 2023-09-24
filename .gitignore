@@ -94,6 +94,7 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+.env
 
 docs/.env.example
 
